@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// import "./LoginForm.css"; // Optional for styling
+import "./LoginForm.css";
 
 const LoginForm = () => {
   const [username, setUsername] = useState("");
@@ -31,7 +31,6 @@ const LoginForm = () => {
           id="username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
-          required
         />
       </div>
       <div className="form-group">
@@ -41,13 +40,12 @@ const LoginForm = () => {
           id="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          required
         />
       </div>
       <div className="form-group">
         <button type="submit">Submit</button>
       </div>
-      {message && <div className={`message ${message === "Welcome, user!" ? "success" : ""}`}>{message}</div>}
+      {message && <p className="message">{message}</p>}
     </form>
   );
 };
